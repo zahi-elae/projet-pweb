@@ -1,28 +1,16 @@
 /* ===== categories.css : commun aux 3 pages de catégories ===== */
-
-/* Mêmes couleurs que l'accueil + une couleur d'accent par page */
-:root {
-  --nuit: #0b1020;
-  --carte: #151b2e;
-  --texte: #e6e9f2;
-  --gris: #9aa3b8;
-  --accent: #00e5ff;
-}
-
-body.disparition    { --accent: #ff4d6d; }
-body.transformation { --accent: #00e5ff; }
-body.emergence      { --accent: #a259ff; }
+/* Même palette que l'accueil. Chaque page a une couleur d'accent
+   grâce à la classe de <body> : rouge (disparition), cyan (transformation), violet (emergence) */
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   font-family: "Segoe UI", Tahoma, sans-serif;
-  background-color: var(--nuit);
-  color: var(--texte);
+  background-color: #0b1020;
+  color: #e6e9f2;
   line-height: 1.7;
   display: flex;
   flex-direction: column;
@@ -34,14 +22,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 25px;
   padding: 45px 20px;
-  background: radial-gradient(circle at top, #1e2642, var(--nuit));
-  border-bottom: 4px solid var(--accent);
+  background-color: #151b2e;
+  border-bottom: 4px solid;
 }
 
 header img {
   width: 80px;
+  margin-right: 25px;
   transition: transform 0.5s;
 }
 
@@ -50,16 +38,14 @@ header img:hover {
 }
 
 header h1 {
-  font-size: 2.4rem;
+  font-size: 38px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--accent);
-  text-shadow: 0 0 15px var(--accent);
   animation: apparition 1s ease-out;
 }
 
 header p {
-  color: var(--gris);
+  color: #9aa3b8;
   font-style: italic;
 }
 
@@ -75,7 +61,7 @@ header p {
 
 /* ---------- Menu ---------- */
 nav {
-  background-color: rgba(11, 16, 32, 0.95);
+  background-color: #0b1020;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -83,18 +69,21 @@ nav {
 }
 
 nav ul {
-  list-style: none;
+  list-style-type: none;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
-  padding: 14px;
+  padding: 10px;
+}
+
+nav li {
+  margin: 4px 6px;
 }
 
 nav a {
   display: block;
   padding: 8px 18px;
-  color: var(--texte);
+  color: #e6e9f2;
   text-decoration: none;
   border-radius: 25px;
   border: 2px solid transparent;
@@ -102,98 +91,95 @@ nav a {
 }
 
 nav a:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 12px var(--accent);
   transform: scale(1.07);
 }
 
 nav li:first-child a {
-  background-color: var(--accent);
-  color: var(--nuit);
+  color: #0b1020;
   font-weight: bold;
 }
 
 /* ---------- Zone principale : contenu + aside côte à côte ---------- */
-main {
+#principal {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 28px;
   flex: 1;
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 30px 20px;
 }
 
 .contenu {
-  flex: 3 1 560px;
+  flex: 3;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  margin-right: 28px;
 }
 
 aside {
-  flex: 1 1 280px;
+  flex: 1;
+  min-width: 260px;
   align-self: flex-start;
   position: sticky;
   top: 90px;
-  background-color: var(--carte);
+  background-color: #151b2e;
   padding: 20px;
   border-radius: 14px;
-  border-top: 4px solid var(--accent);
+  border-top: 4px solid;
 }
 
 aside h2 {
   margin-bottom: 12px;
-  font-size: 1.3rem;
+  font-size: 21px;
 }
 
 aside h2::before {
   content: "\25CF  ";
-  color: var(--accent);
   animation: clignote 1.5s infinite;
 }
 
 aside iframe {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 200px;
   border: 0;
   border-radius: 8px;
 }
 
 /* ---------- Sections ---------- */
 section {
-  background-color: var(--carte);
+  background-color: #151b2e;
   padding: 28px;
+  margin-bottom: 28px;
   border-radius: 14px;
   border: 1px solid #252e4a;
-  scroll-margin-top: 80px; /* pour que le menu collant ne cache pas le titre */
 }
 
 section > h2 {
-  color: var(--accent);
-  font-size: 1.6rem;
+  font-size: 26px;
   margin-bottom: 18px;
   padding-bottom: 8px;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid;
 }
 
 /* Section Présentation : articles en cartes */
 #presentation {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
 }
 
 #presentation > h2 {
-  flex: 1 1 100%;
+  width: 100%;
 }
 
 article {
-  flex: 1 1 240px;
+  flex: 1;
+  min-width: 220px;
+  margin: 8px;
   padding: 18px;
   background-color: #1a2139;
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid;
   border-radius: 8px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -205,29 +191,23 @@ article:hover {
 
 article h3 {
   margin-bottom: 8px;
-  color: var(--texte);
+  color: #e6e9f2;
 }
 
 article p {
-  color: var(--gris);
+  color: #9aa3b8;
 }
 
 /* Section Liste des métiers */
-dl {
-  display: flex;
-  flex-direction: column;
-}
-
 dt {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 18px;
   margin-top: 14px;
 }
 
 dt::before {
   content: "\25B6  ";
-  color: var(--accent);
-  font-size: 0.8em;
+  font-size: 13px;
 }
 
 dt:first-of-type {
@@ -237,28 +217,27 @@ dt:first-of-type {
 dd {
   margin-left: 24px;
   padding: 6px 12px;
-  color: var(--gris);
-  border-left: 1px dashed var(--accent);
+  color: #9aa3b8;
+  border-left: 1px dashed;
 }
 
 /* Section Compétences : étiquettes */
 #competences ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  list-style: none;
+  list-style-type: none;
 }
 
 #competences li {
+  margin: 6px;
   padding: 8px 16px;
   border-radius: 20px;
-  border: 2px solid var(--accent);
+  border: 2px solid;
   transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 
 #competences li:hover {
-  background-color: var(--accent);
-  color: var(--nuit);
+  color: #0b1020;
   transform: rotate(-3deg) scale(1.1);
 }
 
@@ -267,23 +246,25 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
   padding: 28px 20px;
   background-color: #070a15;
-  border-top: 3px solid var(--accent);
+  border-top: 3px solid;
   text-align: center;
 }
 
 footer ul {
-  list-style: none;
+  list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 22px;
+  margin-top: 10px;
+}
+
+footer li {
+  margin: 0 11px;
 }
 
 footer a[target="_blank"] {
-  color: var(--accent);
   text-decoration: none;
   transition: opacity 0.3s;
 }
@@ -293,14 +274,55 @@ footer a[target="_blank"]:hover {
   text-decoration: underline;
 }
 
+/* =========================================================
+   COULEUR D'ACCENT DE CHAQUE PAGE (sélecteurs de classe + descendants)
+   ========================================================= */
+
+/* --- Page disparition : rouge --- */
+.disparition header, .disparition aside, .disparition section > h2,
+.disparition article, .disparition dd, .disparition #competences li,
+.disparition footer { border-color: #ff4d6d; }
+.disparition h1, .disparition section > h2, .disparition dt::before,
+.disparition aside h2::before, .disparition footer a { color: #ff4d6d; }
+.disparition h1 { text-shadow: 0 0 15px #ff4d6d; }
+.disparition nav li:first-child a,
+.disparition #competences li:hover { background-color: #ff4d6d; }
+.disparition nav a:hover { border-color: #ff4d6d; box-shadow: 0 0 12px #ff4d6d; }
+
+/* --- Page transformation : cyan --- */
+.transformation header, .transformation aside, .transformation section > h2,
+.transformation article, .transformation dd, .transformation #competences li,
+.transformation footer { border-color: #00e5ff; }
+.transformation h1, .transformation section > h2, .transformation dt::before,
+.transformation aside h2::before, .transformation footer a { color: #00e5ff; }
+.transformation h1 { text-shadow: 0 0 15px #00e5ff; }
+.transformation nav li:first-child a,
+.transformation #competences li:hover { background-color: #00e5ff; }
+.transformation nav a:hover { border-color: #00e5ff; box-shadow: 0 0 12px #00e5ff; }
+
+/* --- Page émergence : violet --- */
+.emergence header, .emergence aside, .emergence section > h2,
+.emergence article, .emergence dd, .emergence #competences li,
+.emergence footer { border-color: #a259ff; }
+.emergence h1, .emergence section > h2, .emergence dt::before,
+.emergence aside h2::before, .emergence footer a { color: #a259ff; }
+.emergence h1 { text-shadow: 0 0 15px #a259ff; }
+.emergence nav li:first-child a,
+.emergence #competences li:hover { background-color: #a259ff; }
+.emergence nav a:hover { border-color: #a259ff; box-shadow: 0 0 12px #a259ff; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     text-align: center;
   }
+  header img {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
   header h1 {
-    font-size: 1.6rem;
+    font-size: 26px;
   }
   nav {
     position: static; /* le menu ne reste plus collé en haut sur mobile */
@@ -310,22 +332,33 @@ footer a[target="_blank"]:hover {
     align-items: stretch;
     text-align: center;
   }
-  main {
+  #principal {
     flex-direction: column;
     padding: 15px;
   }
+  .contenu {
+    margin-right: 0;
+    min-width: 0;
+  }
+  section {
+    padding: 15px;
+  }
+  #presentation {
+    flex-direction: column; /* les articles s'empilent sur mobile */
+  }
+  article {
+    margin: 8px 0;
+  }
   aside {
     order: -1;       /* la vidéo passe en haut sur mobile */
+    min-width: 0;
     position: static;
+    margin-bottom: 20px;
   }
 }
 
 @media (min-width: 1400px) {
-  main {
+  #principal {
     max-width: 1400px;
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
 }
