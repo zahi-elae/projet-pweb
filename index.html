@@ -3,57 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L'IA et les métiers</title>
+  <title>IA & Métiers - Le travail de demain</title>
   <link rel="stylesheet" href="style_index.css">
 </head>
 <body>
 
   <header>
-    <h1>L'impact de l'Intelligence Artificielle sur les métiers</h1>
+    <figure class="logo">
+      <img src="logo.png" alt="Logo IA & Métiers">
+    </figure>
+    <div class="titre">
+      <h1>IA <span>&amp;</span> Métiers</h1>
+      <p>L'impact de l'Intelligence Artificielle sur le monde du travail</p>
+    </div>
   </header>
 
   <nav>
-    <a href="disparition.html">Métiers en voie de disparition</a>
-    <a href="transformation.html">Métiers en transformation</a>
-    <a href="emergence.html">Métiers émergents</a>
+    <a href="disparition.html" class="rouge">Métiers en voie de disparition</a>
+    <a href="transformation.html" class="cyan">Métiers en transformation</a>
+    <a href="emergence.html" class="violet">Métiers émergents</a>
   </nav>
 
   <main>
-    <section>
+    <section id="presentation">
       <h2>Présentation du site</h2>
-      <p>Écris ici un texte expliquant le rôle croissant de l'IA dans le monde professionnel.</p>
+      <p>L'Intelligence Artificielle s'impose aujourd'hui dans presque tous les secteurs : santé, finance, éducation, commerce, industrie. Grâce au <strong>machine learning</strong> et à l'<strong>IA générative</strong>, les machines savent lire des documents, comprendre la parole, écrire du texte ou du code et aider à la décision.</p>
+      <p>Cette révolution transforme le marché du travail en trois mouvements : certains métiers répétitifs <em>disparaissent</em>, d'autres se <em>transforment</em> grâce à la collaboration entre l'humain et la machine, et de <em>nouveaux métiers</em> apparaissent pour concevoir et encadrer ces systèmes.</p>
+
+      <div class="chiffres">
+        <div class="carte">
+          <span class="nombre">83 M</span>
+          <p>d'emplois supprimés dans le monde d'ici 2027 selon le Forum économique mondial (2023)</p>
+        </div>
+        <div class="carte">
+          <span class="nombre">3</span>
+          <p>catégories de métiers : disparition, transformation, émergence</p>
+        </div>
+        <div class="carte">
+          <span class="nombre">1</span>
+          <p>clé pour rester dans la course : l'apprentissage continu</p>
+        </div>
+      </div>
     </section>
 
-    <section>
+    <section id="categories">
       <h2>Les trois catégories de métiers</h2>
       <table>
-        <tr>
-          <th>Catégorie</th>
-          <th>Description</th>
-          <th>Lien</th>
-        </tr>
-        <tr>
-          <td>En voie de disparition</td>
-          <td>Métiers remplacés par l'IA</td>
-          <td><a href="disparition.html">Voir la page</a></td>
-        </tr>
-        <tr>
-          <td>En transformation</td>
-          <td>Métiers où l'humain collabore avec l'IA</td>
-          <td><a href="transformation.html">Voir la page</a></td>
-        </tr>
-        <tr>
-          <td>Émergents</td>
-          <td>Nouveaux métiers créés par l'IA</td>
-          <td><a href="emergence.html">Voir la page</a></td>
-        </tr>
+        <caption>Classement des métiers selon l'impact de l'IA</caption>
+        <thead>
+          <tr>
+            <th>Catégorie</th>
+            <th>Description</th>
+            <th>Exemples</th>
+            <th>Lien</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>En voie de disparition</td>
+            <td>Métiers répétitifs remplacés par l'IA</td>
+            <td>Opérateur de saisie, agent de centre d'appels</td>
+            <td><a href="disparition.html">Découvrir</a></td>
+          </tr>
+          <tr>
+            <td>En transformation</td>
+            <td>Métiers où l'humain collabore avec l'IA</td>
+            <td>Radiologue, développeur web</td>
+            <td><a href="transformation.html">Découvrir</a></td>
+          </tr>
+          <tr>
+            <td>Émergents</td>
+            <td>Nouveaux métiers créés par l'IA</td>
+            <td>Prompt engineer, éthicien de l'IA</td>
+            <td><a href="emergence.html">Découvrir</a></td>
+          </tr>
+        </tbody>
       </table>
     </section>
   </main>
 
   <footer>
-    <p>Liens utiles :</p>
-    <a href="https://www.weforum.org" target="_blank">World Economic Forum</a>
+    <p>Liens utiles sur l'impact de l'IA sur les métiers :</p>
+    <ul>
+      <li><a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener">World Economic Forum - Future of Jobs</a></li>
+      <li><a href="https://www.francetravail.fr/actualites/le-dossier/les-metiers-de-demain/ia-les-metiers-qui-recrutent-le.html" target="_blank" rel="noopener">France Travail - Les métiers de l'IA</a></li>
+      <li><a href="https://www.ilo.org/" target="_blank" rel="noopener">Organisation internationale du Travail</a></li>
+    </ul>
+    <p class="copyright">&copy; 2026 - Mini-projet Programmation Web 1</p>
   </footer>
 
 </body>
